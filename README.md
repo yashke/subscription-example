@@ -1,24 +1,19 @@
-# README
+# Subscription system example
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Usually it's not the thing you want to focus on. It's not a part of UVP of the business, rather infra-like code - you need it to correctly account for your services. This project is my take on SaaS subscription model - the part of apps I've never seen implemented correctly.
 
-Things you may want to cover:
+Features:
 
-* Ruby version
+* trials
+* multiple plans (with support for legacy plans)
+* different periods of subscription (per plan)
+* resource limits based on plans - binary and numeric
+* periodic discounts - like 50% of plan's yearly price for 1 year
+* upgrades and downgrades
+* special cases, because you never know what to expect from your marketing team
 
-* System dependencies
+Implementation details:
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* DDD, CQRS and ES as architecture patterns
+* push to master approach
+* rubocop with standard set of rules applied
