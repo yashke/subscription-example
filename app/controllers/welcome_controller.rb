@@ -1,18 +1,12 @@
+require 'revenue_generator/account_repository'
+
 class WelcomeController < ApplicationController
   def show
-    @current_user_id = current_user_id
+    cookies[:account_id] ||= SecureRandom.uuid
+    @account = account_repository.fetch_or_create(cookies[:account_id])
   end
 
-  private
-
-  def current_user_id
-    return @current_user_id if defined?(@current_user_id)
-
-    if cookies[:current_user_id]
-      @current_user_id = cookies[:current_user_id]
-    else
-      @current_user_id = SecureRandom.uuid
-      cookies.permanent[:current_user_id] = @current_user_id
-    end
+  def account_repository
+    @account_repository ||= RevenueGenerator::AccountRepository.new
   end
 end
