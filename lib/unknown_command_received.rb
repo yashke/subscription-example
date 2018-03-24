@@ -1,0 +1,2 @@
+class UnknownCommandReceived < StandardError
+end
