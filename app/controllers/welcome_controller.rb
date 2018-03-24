@@ -6,6 +6,8 @@ class WelcomeController < ApplicationController
     @account = account_repository.fetch_or_create(cookies[:account_id])
   end
 
+  private
+
   def account_repository
     @account_repository ||= RevenueGenerator::AccountRepository.new
   end
