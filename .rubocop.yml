@@ -1,0 +1,15 @@
+AllCops:
+  Include:
+    - 'lib/**/*'
+    - 'app/**/*'
+    - 'test/**/*'
+  Exclude:
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'bin/**/*'
+    - 'app/assets/**/*'
+    - 'Gemfile'
+    - 'Gemfile.lock'
+    - 'Rakefile'
+Style/FrozenStringLiteralComment:
+  Enabled: false
